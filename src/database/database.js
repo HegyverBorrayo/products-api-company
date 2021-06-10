@@ -1,18 +1,9 @@
-import { Sequelize, Model, DataTypes } from 'sequelize'
+import Sequelize from 'sequelize';
+import { sequelizedb } from './keys'
 
-import { sequelizedb, sequelizehd } from './keys'
+const sequelize = new Sequelize(sequelizedb.database, sequelizedb.user, sequelizedb.password, {
+  host: sequelizedb.host,
+  dialect: sequelizedb.dialect
+});
 
-const producModel = require('../models/Product')
-
-const sequelize = new Sequelize(sequelizedb.database, sequelizedb.user, sequelizedb.password , sequelizehd);
-
-const Product = producModel(sequelize, Sequelize);
-
-sequelize.sync({force: false})
-    .then(() => {
-        console.log("Tablas sincornizadas")
-    })
-
-module.exports = {
-    Product
-}
+export default sequelize;

@@ -12,8 +12,6 @@ module.exports = {
         user: process.env.DB_USER,
         database: process.env.DB_DATABASE,
         password: process.env.DB_PASSWORD,
-    },
-    sequelizehd: {
         host: process.env.DB_HOST,
         dialect: 'mysql'
     }
