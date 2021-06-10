@@ -1,0 +1,41 @@
+{
+  "name": "products-api-company",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir build",
+    "dev": "nodemon src/index.js --exec babel-node",
+    "start": "node build/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HegyverBorrayo/products-api-company.git"
+  },
+  "author": "Erinson Borrayo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HegyverBorrayo/products-api-company/issues"
+  },
+  "homepage": "https://github.com/HegyverBorrayo/products-api-company#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mogoose": "^0.0.1-security",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.5",
+    "@babel/node": "^7.14.5",
+    "@babel/preset-env": "^7.14.5"
+  }
+}
