@@ -25,7 +25,7 @@ export const getProductById = async(req, res) => {
 
 export const updateProductById = async(req, res) => {
     const { name, category, price, imageUrl } = req.body;
-    let productId = req.params.productId
+    const { productId } = req.params
     
     const product = await ModelProduct.findByPk(productId)
 
@@ -64,5 +64,13 @@ export const updateProductById = async(req, res) => {
 }
 
 export const deleteProductById = async(req, res) => {
-    
+    const { productId } = req.params
+    const product = await ModelProduct.findByPk(productId)
+
+    if (product) {
+        await ModelProduct.destroy({ where: { id: productId}})
+        res.status(204).json()
+    } else {
+        res.status(404).json({error: "Product not found"})
+    }
 }
